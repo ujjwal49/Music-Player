@@ -1,0 +1,899 @@
+
+
+body{
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+    background: linear-gradient(360deg, #c7c5c5 90%, rgb(58, 59, 59) 100%);
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255); 
+}
+
+.heading h3{
+    font-size: 3rem;
+    padding-left: 5%;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+
+    /*  ************* navbar start ************* */
+        .navbar-list .search-bar , 
+         .navbar-list .bell-icon
+          .navbar-list .account{
+            display: none;
+        }
+
+    /*  ************* navbar end ************* */
+    .left-container{
+        width: 100vw;
+    }
+    .right-container{
+        display: none;
+    }
+    .left-container section{
+        width: 100vw;
+    }
+
+    /* ************* carousel start ************* */
+
+        #setheight{
+            height: 50vh !important; 
+            margin: 0;
+        }
+
+        .carousel .heading{
+            margin-bottom: 0 0 5vh 0;
+        }
+
+        [type=radio] {
+            display: none;
+        }
+
+        #slider {
+            height: 25vh;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        #slider label {
+            margin: auto;
+            width: 30%;
+            height: 100% !important;
+            border-radius: 4px;
+            position: absolute;
+            left: 0; right: 0;
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+
+
+    /* ************* carousel end ************* */
+
+
+    /* ************* Popular Artist Start ************* */
+        .popular-artist-content{
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            flex-wrap: wrap !important;
+        }
+
+        .popular-artist-content .artist-details{
+            height: 35vh !important;
+            width: 20vw !important;
+        }
+
+        .artist-image img{
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .artist-image img:hover{
+            opacity: 0.5;
+        }
+    /* ************* Popular Artist End ************* */
+
+
+    /* ************* All Playlist Cards Start ************* */
+        .latest-english-content ,
+         .latest-hindi-content ,
+          .punjabi-content{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+       
+        }
+
+        .latest-english-card ,
+         .latest-hindi-card ,
+          .latest-punjabi-card{
+            height: 40vh !important;
+            width: 30vw !important;
+            margin: 4px !important;
+            background-color: #c7c5c5;
+            border-radius: 10px;
+            transition: 0.4s ease-in-out;
+        }
+
+        .latest-english-card:hover ,
+         .latest-hindi-card:hover ,
+          .latest-punjabi-card:hover{
+            background-color: #272727;
+
+        }
+
+        .latest-english-card:hover .latest-english-image img,
+         .latest-hindi-card:hover .latest-hindi-image img,
+          .latest-punjabi-card:hover .latest-pubjabi-image img{
+            opacity: 0.7;
+        }
+
+        .latest-english-content .latest-english-details ,
+         .latest-hindi-content .latest-hindi-details ,
+          .punjabi-content .punjabi-details{
+            height: 25vh;
+            width: 20vw !important;
+            padding: 25%;
+            /* margin: 35px; */
+        }
+
+        .latest-english-image img ,
+         .latest-hindi-image img ,
+          .punjabi-image img{
+            height: 100%;
+            width: 100%;
+            box-shadow: 0 0 20px 0 #121212;
+            transition: 0.4s ease-in-out;
+
+        }
+
+    /* ************* All Playlist Cards End ************* */
+
+    /* ************* Player Container Start ************* */
+        .player-song{
+            display: none !important;
+        }
+
+        .control{
+            width: 100vw !important;
+        }
+
+        .player-options .volume{
+            display: none !important;
+        }
+
+            
+}
+    
+
+/*  ************* navbar start ************* */
+
+    .navbar-container{
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-head{
+        font-size: 3rem;
+    }
+
+    .navbar-head div{
+        padding: 0% 10%;
+    }
+
+    input{
+        border-radius: 20px;
+        height: 5vh;
+        background-color: rgba(216, 216, 216, 0);
+        text-align: center;
+    }
+
+    .navbar-list{
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+
+ 
+    .bell-icon i{
+        font-size: larger;
+    }
+
+    .account{
+        height: 50px;
+    }
+
+    .account img{
+        height: 100%;
+        border-radius: 100%;
+
+    }
+
+/* ************* navbar end ************* */
+
+
+
+/* ************* main content start ************* */
+    .main{
+        margin: 0;
+        display: flex;
+        height: auto;
+    }
+
+
+    /* ************* left container contains all the albums list and much more ************* */
+        .left-container{
+            width: 70%;
+        }
+
+
+        /* ************* carousel start ************* */
+
+            #setheight{
+                min-height: 50vh !important;
+             
+                margin: 0;
+            }
+
+            .carousel .heading{
+                margin-bottom: 0 0 5vh 0;
+            }
+
+            [type=radio] {
+                display: none;
+            }
+  
+            #slider {
+                height: 25vh;
+                position: relative;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+            }
+  
+            #slider label {
+                margin: auto;
+                width: 30%;
+                height: 100%;
+                border-radius: 4px;
+                position: absolute;
+                left: 0; right: 0;
+                cursor: pointer;
+                transition: transform 0.4s;
+            }
+  
+            #s1:checked ~ #slide4, #s2:checked ~ #slide5,
+             #s3:checked ~ #slide1, #s4:checked ~ #slide2,
+              #s5:checked ~ #slide3 {
+                box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+                transform: translate3d(-100%,0,-20px);
+            }
+  
+            #s1:checked ~ #slide5, #s2:checked ~ #slide1,
+             #s3:checked ~ #slide2, #s4:checked ~ #slide3,
+              #s5:checked ~ #slide4 {
+                box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+                transform: translate3d(-60%,0,-10px);
+            }
+  
+            #s1:checked ~ #slide1, #s2:checked ~ #slide2,
+             #s3:checked ~ #slide3, #s4:checked ~ #slide4,
+              #s5:checked ~ #slide5 {
+                box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+                transform: translate3d(0,0,0) scale(1.5);
+            }
+  
+            #s1:checked ~ #slide2, #s2:checked ~ #slide3,
+             #s3:checked ~ #slide4, #s4:checked ~ #slide5,
+              #s5:checked ~ #slide1 {
+                box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+                transform: translate3d(60%,0,-10px);
+            }
+  
+            #s1:checked ~ #slide3, #s2:checked ~ #slide4,
+            #s3:checked ~ #slide5, #s4:checked ~ #slide1,
+            #s5:checked ~ #slide2 {
+                box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+                transform: translate3d(100%,0,-20px);
+            }
+ 
+            #slide1 {
+                background-image: url(../images/carousel1.jpg);
+                background-size: cover;
+                background-color: #00BCD4
+            }
+            #slide2 { 
+                background-image: url(../images/carousel2.jpg);
+                background-size: cover;
+                background-color: #4CAF50 
+            }
+            #slide3 { 
+                background-image: url(../images/carousel3.jpg);
+                background-size: cover;
+                background-color: #CDDC39 
+            }
+            #slide4 { 
+                background-image: url(../images/carousel4.jpg);
+                background-size: cover;
+                background-color: #FFC107 
+            }
+            #slide5 { 
+                background-image: url(../images/carousel5.jpg);
+                background-size: cover;
+                background-color: #FF5722 
+            }
+
+        /* ************* carousel end ************* */
+
+
+
+        /* ************* album container start ************* */
+            .new-album-content{
+                display: flex;
+                justify-content: space-evenly;
+
+            }
+
+
+            .new-album-content div{
+                height: 20vh;
+                width: 30%;
+                transition: 0.2s ease-in-out;
+                box-shadow: 0px 10px 20px 0px black;
+            }
+
+            .new-album-content div:hover{
+                transform: scale(1.2);
+                box-shadow: 0px 0px 40px 0px black;
+            }
+
+
+            .images img{
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            #artist-content{
+                height: 0;
+                width: 0;
+                position: fixed;
+                overflow: hidden;
+            }
+
+            #artist-content:target{
+                height: 100vh;
+                width: 100vw;
+                background-color: #04AA6D;
+            }
+
+
+        /* ************* album container ends ************* */
+
+
+
+        /* ************* latest-release start ************* */
+
+            .latest-release-content{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+
+            }
+
+            .latest-release-content .song{
+                margin: 5px;
+                height: 10vh;
+                width: 45%;
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0px 5px 6px 0px black;
+                border-radius: 5px;
+    
+            }
+
+
+            .song-image img{
+                height: 100%;
+                width: 100%;
+                border-radius: 5px; ;
+            }
+
+        /* ************* latest-release ends ************* */
+
+
+
+        /* ************* Popular Artist Start ************* */
+            .popular-artist-content{
+                display: flex;
+                justify-content: space-evenly;
+                text-align: center;
+            }
+
+            .popular-artist-content .artist-details{
+                height: 25vh;
+                width: 10vw;
+            }
+
+            .artist-image img{
+                height: 100%;
+                width: 100%;
+                border-radius: 100%;
+                transition: 0.3s ease-in-out;
+
+            }
+
+            .artist-image img:hover{
+                opacity: 0.5;
+            }
+        /* ************* Popular Artist End ************* */
+
+
+
+        /* ************* All Playlist Cards Start ************* */
+            .latest-english-content ,
+             .latest-hindi-content ,
+              .punjabi-content{
+                display: flex;
+                justify-content: space-evenly;
+               
+            }
+
+            .latest-english-card ,
+             .latest-hindi-card ,
+              .latest-punjabi-card{
+                height: 40vh;
+                width: 15vw;
+                background-color: #c7c5c5;
+                border-radius: 10px;
+                transition: 0.4s ease-in-out;
+            }
+
+            .latest-english-card:hover ,
+             .latest-hindi-card:hover ,
+              .latest-punjabi-card:hover{
+                background-color: #272727;
+    
+            }
+
+            .latest-english-card:hover .latest-english-image img,
+             .latest-hindi-card:hover .latest-hindi-image img,
+              .latest-punjabi-card:hover .latest-pubjabi-image img{
+                opacity: 0.7;
+            }
+
+            .latest-english-content .latest-english-details ,
+             .latest-hindi-content .latest-hindi-details ,
+              .punjabi-content .punjabi-details{
+                height: 25vh;
+                width: 10vw;
+                padding: 17%;
+                /* margin: 35px; */
+            }
+
+            .latest-english-image img ,
+             .latest-hindi-image img ,
+              .punjabi-image img{
+                height: 100%;
+                width: 100%;
+                box-shadow: 0 0 20px 0 #121212;
+                transition: 0.4s ease-in-out;
+
+            }
+
+        /* ************* All Playlist Cards End ************* */
+
+
+
+    /* ************* left container Ends ************* */
+
+
+
+    /* ************* right container start ************* */
+
+        .right-container{
+            height: 90vh;
+            width: 30%;
+        }
+
+        .heading-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+
+        /* ************* Dropdown Start ************* */
+            .dropbtn a{
+                text-decoration: none;
+                font-size: 2rem;
+                color: black;
+            }
+            #dropdown{
+                height: 0;
+                width: 0;
+                position: fixed;
+                overflow: hidden;
+                text-align: center;
+                
+            }
+
+            #dropdown a{
+                text-decoration: none;
+                font-size: 1rem;
+                color: black;
+            }
+
+            #dropdown:target{
+                height: 20vh;
+                width: 7vw;
+                position: fixed;
+                /* overflow: hidden; */
+                
+            }
+            
+  
+            
+        /* ************* Dropdown End ************* */
+
+
+        /* ************* Queue List Start ************* */
+
+            .list{
+                overflow-y: scroll;
+                height:100vh;
+            }
+
+            .list::-webkit-scrollbar {
+                width: 5px;
+            }
+
+
+
+            .list::-webkit-scrollbar-thumb {
+                background: rgb(255, 255, 255); 
+            }
+
+
+            .list ol li{
+                font-size: medium;
+                display: flex;
+                justify-content: space-between;
+                height: 14vh;
+            }
+
+            .right-container .song{
+                height: 10vh;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            .right-container .song-image{
+                height: 110%;
+                width: 30%;
+                transition: 0.2s ease-in-out;
+                position: relative;
+            }
+
+            .overlay {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0);
+                transition: background 0.5s ease;
+                position: absolute;
+            }
+  
+            .song-image:hover .overlay {
+                background: rgba(0, 0, 0, .3);
+                display: block;
+            }
+
+
+            .play-button {
+                width: 100%;
+                height: 100%;
+                left:0px;
+                top: 0px;
+                text-align: center;
+                opacity: 0;
+                transition: opacity .35s ease;
+                position: absolute;
+            }
+      
+            .play-button img {
+                text-align: center;
+                color: white;
+                z-index: 1;
+                width: 100%;
+            }
+      
+            .song-image:hover .play-button {
+                opacity: 1;
+            }
+
+            .right-container .favorite-icon{
+                transition: 0.2s ease-in-out;
+                font-size: medium;
+            }
+
+            .right-container .favorite-icon:hover{
+                color: #39e2be;
+                font-size: medium;
+            }   
+
+        /* ************* Queue List Ends ************* */
+
+
+
+    /* ************* right container ends ************* */
+
+
+/* ************* Main Container End ************* */
+
+
+/* ************* Player-container start ************* */
+    .player-container{
+        height: 15vh;
+        bottom: 0px;
+        border-top: 0.5px solid white;
+        box-shadow: 10px 0px 20px 10px #1d1e22;
+        position: fixed;
+        background-color: #c7c5c5;
+        width: 100vw;
+        display: flex;
+    }
+
+    .player-song{
+        height:100%;
+        width: 25vw;
+        /* background-color: #00BCD4; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 10px;
+        text-align: center;
+    }
+
+    .song-cover{
+        height: 50%;
+        width: 25%;
+        background-color: #020e0f;
+        border-radius: 5px ;
+        box-shadow: 0 0 20px 0 black;
+        
+    }
+
+    .song-cover img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px ;
+    }
+
+    .song-detail{
+        height: 70%;
+        width: 50%;
+        /* background-color: #4CAF50; */
+    }
+
+    .player-container .favourite-icon{
+        height: 20%;
+        /* width: 20%; */
+        /* background-color: #020e0f; */
+        ;
+        transition: 0.4s all ease-in-out;
+
+    }
+
+    .player-container .favourite-icon:hover{
+        color: #39e2be;
+        font-size: medium;
+    } 
+
+    
+
+    .player-controls{
+        height:100%;
+        width: 50vw;
+        /* background-color: #4ed400; */
+        text-align: center;
+    }
+
+    .control{
+        /* background-color: #CDDC39; */
+        height: 100%;
+        width:100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .control .shuffle{
+        height: 15%;
+        width: 10%;
+        /* background-color: #4CAF50; */
+        transition: 0.2s ease-in-out;
+    }
+
+    .shuffle:hover{
+        transform: scale(1.2);
+    
+    }
+
+    .control .backward{
+        height: 15%;
+        width: 10%;
+        /* background-color: #275a29; */
+        transition: 0.2s ease-in-out;
+    }
+
+    .backward:hover{
+        transform: scale(1.2);
+    
+    }
+
+    .control .play-pause{
+        height: 50%;
+        width: 10%;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px 0 black;
+        transition: 0.2s ease-in-out;
+    }
+
+    .play-pause:hover{
+        transform: scale(1.2);
+    
+    }
+
+    #play-pause {
+        display: none;
+    }
+    
+    label {
+        cursor: pointer;
+    }
+    
+    #play-pause:checked + #play-pause-label::after {
+        content: '||';
+        color: black;
+        font-size: 2rem;
+        /* padding-left: 40px; */
+    }
+    
+    #play-pause-label::after {
+        content: '>';
+        color: black;
+        font-size: 2rem;
+
+    }
+
+    .control .play-pause img{
+        height: 50%;
+        width: 50%;
+    }
+
+
+
+    .control .forward{
+        height: 15%;
+        width: 10%;
+        /* background-color: #113f12; */
+        justify-content: center;
+        transition: 0.2s ease-in-out;
+    }
+
+    .forward:hover{
+        transform: scale(1.2);
+    
+    }
+
+    .control .repeat{
+        height: 15%;
+        width: 10%;
+        /* background-color: #061f07; */
+        transition: 0.2s ease-in-out;
+    }
+
+    .repeat:hover{
+        transform: scale(1.2);
+    
+    }
+
+
+    .player-options{
+        height:100%;
+        width: 25vw;
+        /* background-color: #0400d4; */
+        
+    }
+
+    .player-options .volume{
+        width: 100% ;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .volume .volume-icon{
+        width: 10%;
+    }
+
+    .slidecontainer {
+        width: 100%;
+    }
+      
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 20px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+      
+    .slider:hover {
+        opacity: 1;
+    }
+    
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+
+
+/* ************* Player-container ends ************* */
+
+
+
+/* custom css */
+
+.full-width{
+    width:99vw
+}
+
+.blank-space{
+    height: 20vh;
+}
